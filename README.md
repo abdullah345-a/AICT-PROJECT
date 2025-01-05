@@ -1,1 +1,3 @@
 # AICT-PROJECT
+
+This project is a web-based application designed to promote and manage events. It includes multiple pages such as the homepage, event details, registration, and contact form. The purpose of this website is to provide users with detailed event information, facilitate registrations, and allow users to contact event organizers. The project is intended for organizations or individuals who host events, such as business summits, expos, and creative festivals. It aims to provide a user-friendly interface for event promotion and participant engagement. By integrating interactive elements like event registration and contact forms, the website simplifies the process of managing events and connecting with attendees.

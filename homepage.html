@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event Promotion</title>
+    <style>
+        h1, h2, h3 {
+            text-align: center;
+            color: #0056b3;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        nav {
+            background-color: #007bff;
+            padding: 10px 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .hero {
+            text-align: center;
+            background-color: #e9ecef;
+            padding: 50px 20px;
+            position: relative;
+        }
+        .hero img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .cta-button, .event-details-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+        }
+        .cta-button:hover, .event-details-button:hover {
+            background-color: #0056b3;
+        }
+        #about, #services {
+            padding: 20px;
+            text-align: center;
+        }
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="events.html">Event Details</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <img src="https://ajuxt.com/wp-content/uploads/2022/10/Event-Promotion-850x425.png" alt="Event Promotion">
+        <h1>Welcome to Our Upcoming Events</h1>
+        <p>Join us for exciting events in 2025. Stay tuned for more details!</p>
+        <button class="event-details-button" onclick="window.location.href='events.html'">Event Details</button>
+    </div>
+
+    <div id="about">
+        <h2>About Our Events</h2>
+        <p>We host world-class events that bring together experts, innovators, and creatives. Explore our upcoming events and get ready to be inspired!</p>
+    </div>
+
+    <div id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service">
+                <h3>Networking</h3>
+                <p>Meet industry leaders and professionals, exchange ideas, and create valuable connections.</p>
+            </div>
+            <div class="service">
+                <h3>Workshops</h3>
+                <p>Participate in hands-on sessions led by experts, gaining practical skills and knowledge.</p>
+            </div>
+            <div class="service">
+                <h3>Exhibitions</h3>
+                <p>Explore the latest innovations and creative works at our event exhibitions.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Event Promotion. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for an Event</title>
+    <style>
+        h1, h2, h3 {
+            text-align: center;
+            color: #0056b3;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        nav {
+            background-color: #007bff;
+            padding: 10px 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .registration-form {
+            padding: 20px;
+            text-align: center;
+        }
+        form input, form select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        form button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+        .ticket-info {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .confirmation-message {
+            font-size: 1.5em;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="events.html">Event Details</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="registration-form">
+        <h1>Register for an Event</h1>
+        <p>Please select an event you would like to attend and fill out the form below to register.</p>
+        <form id="registration-form">
+            <label for="event">Select Event:</label>
+            <select name="event" id="event" required>
+                <option value="business-summit">Business Summit 2025</option>
+                <option value="tech-expo">Tech Innovations Expo</option>
+                <option value="arts-festival">Creative Arts Festival</option>
+            </select>
+            <div class="ticket-info" id="ticket-info">
+            </div>
+
+            <label for="name">Your Name:</label>
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+
+            <label for="ticket-type">Ticket Type:</label>
+            <select name="ticket-type" id="ticket-type" required>
+                <option value="general">General Admission</option>
+                <option value="vip">VIP Access</option>
+            </select>
+
+            <button type="button" id="register-btn">Register Now</button>
+        </form>
+
+        <div class="confirmation-message" id="confirmation-message" style="display: none;">
+            You have registered successfully!
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Event Promotion. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const eventSelect = document.getElementById('event');
+        const ticketInfoDiv = document.getElementById('ticket-info');
+        const ticketTypeSelect = document.getElementById('ticket-type');
+        const registerButton = document.getElementById('register-btn');
+        const confirmationMessage = document.getElementById('confirmation-message');
+
+        const eventPrices = {
+            "business-summit": {
+                general: "$200",
+                vip: "$400"
+            },
+            "tech-expo": {
+                general: "$150",
+                vip: "$300"
+            },
+            "arts-festival": {
+                general: "$100",
+                vip: "$250"
+            }
+        };
+        function updateTicketInfo() {
+            const selectedEvent = eventSelect.value;
+            const selectedTicketType = ticketTypeSelect.value;
+            const price = eventPrices[selectedEvent][selectedTicketType];
+            ticketInfoDiv.textContent = `Ticket Price: ${price} for ${selectedTicketType.charAt(0).toUpperCase() + selectedTicketType.slice(1)} Ticket`;
+        }
+        eventSelect.addEventListener('change', updateTicketInfo);
+        ticketTypeSelect.addEventListener('change', updateTicketInfo);
+        updateTicketInfo();
+        registerButton.addEventListener('click', function () {
+            confirmationMessage.style.display = 'block';
+
+         
+        });
+    </script>
+</body>
+</html>
